@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GERMANO — DJ / Producer | Press Kit</title>
+  <meta name="description" content="Press Kit oficial de Germano, DJ y productor techno de Buenos Aires, Argentina. Activo desde 2005, con presentaciones en Argentina, Chile y Colombia." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black:   #080808;
+      --grey-d:  #111111;
+      --grey-m:  #1c1c1c;
+      --grey-l:  #2e2e2e;
+      --white:   #f0ede8;
+      --accent:  #00e5c8;
+      --red:     #ff2b2b;
+      --muted:   #888;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: 'Space Grotesk', sans-serif;
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    /* ── NOISE OVERLAY ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.4;
+    }
+
+    /* ── HEADER / HERO ── */
+    .hero {
+      position: relative;
+      height: 100vh;
+      min-height: 600px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 0 6vw 6vh;
+      overflow: hidden;
+    }
+
+    .hero__bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('fotos/IMG_1334.jpg');
+      background-size: cover;
+      background-position: center 30%;
+      filter: brightness(0.38) saturate(0.7);
+      transform: scale(1.03);
+      transition: transform 8s ease-out;
+    }
+
+    .hero:hover .hero__bg { transform: scale(1); }
+
+    .hero__vignette {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        transparent 30%,
+        rgba(8,8,8,0.6) 65%,
+        var(--black) 100%
+      );
+    }
+
+    .hero__tag {
+      position: absolute;
+      top: 42px;
+      left: 6vw;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.25em;
+      color: var(--accent);
+      text-transform: uppercase;
+      z-index: 2;
+    }
+
+    .hero__tag span {
+      display: inline-block;
+      width: 30px;
+      height: 1px;
+      background: var(--accent);
+      vertical-align: middle;
+      margin-right: 10px;
+    }
+
+    .hero__year {
+      position: absolute;
+      top: 42px;
+      right: 6vw;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      color: var(--muted);
+      z-index: 2;
+    }
+
+    .hero__content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero__name {
+      font-size: clamp(4.5rem, 14vw, 12rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 0.88;
+      text-transform: uppercase;
+    }
+
+    .hero__name em {
+      font-style: normal;
+      color: var(--accent);
+    }
+
+    .hero__subtitle {
+      font-family: 'Space Mono', monospace;
+      font-size: clamp(0.65rem, 1.5vw, 0.85rem);
+      letter-spacing: 0.35em;
+      color: var(--muted);
+      text-transform: uppercase;
+      margin-top: 18px;
+    }
+
+    .hero__scroll {
+      position: absolute;
+      bottom: 32px;
+      right: 6vw;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      color: var(--muted);
+      text-transform: uppercase;
+      z-index: 2;
+      animation: pulse 2.5s ease-in-out infinite;
+    }
+
+    .hero__scroll::after {
+      content: '';
+      display: block;
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, var(--muted), transparent);
+    }
+
+    @keyframes pulse { 0%,100%{opacity:.4} 50%{opacity:1} }
+
+    /* ── SECTION LAYOUT ── */
+    section {
+      padding: 100px 6vw;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.3em;
+      color: var(--accent);
+      text-transform: uppercase;
+      margin-bottom: 48px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--grey-l);
+    }
+
+    /* ── BIO ── */
+    .bio-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    .bio-text p {
+      font-size: clamp(1rem, 1.4vw, 1.15rem);
+      color: #c8c4be;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    .bio-text p:first-child::first-letter {
+      font-size: 4rem;
+      font-weight: 700;
+      color: var(--accent);
+      float: left;
+      line-height: 0.75;
+      margin-right: 8px;
+      margin-top: 6px;
+    }
+
+    .bio-side {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .stat-card {
+      border: 1px solid var(--grey-l);
+      padding: 28px 30px;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.3s;
+    }
+
+    .stat-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 3px;
+      height: 100%;
+      background: var(--accent);
+    }
+
+    .stat-card:hover { border-color: var(--accent); }
+
+    .stat-card__number {
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1;
+    }
+
+    .stat-card__number span { color: var(--accent); }
+
+    .stat-card__label {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      color: var(--muted);
+      text-transform: uppercase;
+      margin-top: 6px;
+    }
+
+    /* ── GALLERY ── */
+    .gallery-wrap {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: 280px 280px;
+      gap: 8px;
+    }
+
+    .gallery-item {
+      overflow: hidden;
+      position: relative;
+    }
+
+    .gallery-item:nth-child(1) { grid-column: span 2; grid-row: span 2; }
+    .gallery-item:nth-child(2) { grid-column: span 1; grid-row: span 1; }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.75) saturate(0.6);
+      transition: filter 0.5s ease, transform 0.5s ease;
+      display: block;
+    }
+
+    .gallery-item:hover img {
+      filter: brightness(0.9) saturate(1);
+      transform: scale(1.04);
+    }
+
+    /* ── HIGHLIGHTS / HEADLINERS ── */
+    .highlights {
+      background: var(--grey-d);
+      padding: 80px 6vw;
+    }
+
+    .highlights > div {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .names-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 14px;
+      margin-top: 10px;
+    }
+
+    .name-pill {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      padding: 7px 16px;
+      border: 1px solid var(--grey-l);
+      color: var(--muted);
+      text-transform: uppercase;
+      transition: all 0.25s;
+      cursor: default;
+    }
+
+    .name-pill:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: rgba(0,229,200,0.04);
+    }
+
+    /* ── VENUES ── */
+    .venues-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2px;
+      margin-top: 8px;
+    }
+
+    .venue-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 22px 0;
+      border-bottom: 1px solid var(--grey-l);
+      transition: padding-left 0.25s;
+    }
+
+    .venue-item:hover { padding-left: 8px; }
+
+    .venue-name {
+      font-weight: 600;
+      font-size: 1.05rem;
+    }
+
+    .venue-loc {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+
+    /* ── MEDIA / LINKS ── */
+    .media-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .media-card {
+      background: var(--grey-d);
+      border: 1px solid var(--grey-l);
+      padding: 28px;
+      text-decoration: none;
+      color: var(--white);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      transition: all 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .media-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      height: 2px;
+      width: 0;
+      background: var(--accent);
+      transition: width 0.3s;
+    }
+
+    .media-card:hover { border-color: var(--grey-l); background: var(--grey-m); transform: translateY(-2px); }
+    .media-card:hover::after { width: 100%; }
+
+    .media-card__type {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.3em;
+      color: var(--accent);
+      text-transform: uppercase;
+    }
+
+    .media-card__title {
+      font-weight: 600;
+      font-size: 1rem;
+      line-height: 1.4;
+    }
+
+    .media-card__arrow {
+      margin-top: auto;
+      font-size: 1.3rem;
+      color: var(--muted);
+      transition: color 0.3s, transform 0.3s;
+    }
+
+    .media-card:hover .media-card__arrow { color: var(--accent); transform: translateX(4px); }
+
+    /* ── LABELS ── */
+    .labels-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 8px;
+    }
+
+    .label-badge {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      padding: 12px 24px;
+      background: var(--grey-m);
+      border: 1px solid var(--grey-l);
+      text-transform: uppercase;
+      color: var(--white);
+      transition: all 0.25s;
+    }
+
+    .label-badge:hover {
+      background: var(--accent);
+      color: var(--black);
+      border-color: var(--accent);
+    }
+
+    /* ── CONTACT SECTION ── */
+    .contact-section {
+      background: var(--grey-d);
+      padding: 100px 6vw;
+      text-align: center;
+    }
+
+    .contact-inner {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .contact-title {
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      line-height: 1;
+      margin-bottom: 24px;
+    }
+
+    .contact-title span { color: var(--accent); }
+
+    .contact-sub {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      color: var(--muted);
+      text-transform: uppercase;
+      margin-bottom: 48px;
+    }
+
+    .contact-actions {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 36px;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: all 0.25s;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: var(--black);
+      font-weight: 700;
+    }
+
+    .btn-primary:hover { background: #00c9b0; }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border: 1px solid var(--grey-l);
+    }
+
+    .btn-outline:hover { border-color: var(--white); }
+
+    /* ── RIDER ── */
+    .rider-section {
+      border-top: 1px solid var(--grey-l);
+    }
+
+    .rider-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 24px;
+    }
+
+    .rider-item {
+      padding: 24px;
+      background: var(--grey-d);
+      border-left: 2px solid var(--grey-l);
+      transition: border-color 0.25s;
+    }
+
+    .rider-item:hover { border-color: var(--accent); }
+
+    .rider-item h4 {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.25em;
+      color: var(--accent);
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .rider-item p {
+      font-size: 0.9rem;
+      color: #c8c4be;
+      line-height: 1.6;
+    }
+
+    /* ── SOCIAL LINKS ── */
+    .social-links {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-decoration: none;
+      text-transform: uppercase;
+      color: var(--muted);
+      transition: color 0.25s;
+    }
+
+    .social-link svg { flex-shrink: 0; transition: transform 0.25s; }
+    .social-link:hover { color: var(--white); }
+    .social-link:hover svg { transform: scale(1.15); }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 32px 6vw;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid var(--grey-l);
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .footer-logo {
+      font-family: 'Space Mono', monospace;
+      font-weight: 700;
+      font-size: 0.8rem;
+      letter-spacing: 0.2em;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+
+    .footer-copy {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      color: var(--grey-l);
+      text-transform: uppercase;
+    }
+
+    /* ── DIVIDER ── */
+    .divider {
+      width: 100%;
+      height: 1px;
+      background: var(--grey-l);
+      margin: 0 auto;
+    }
+
+    /* ── SCROLL FADE IN ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .bio-grid { grid-template-columns: 1fr; gap: 48px; }
+      .gallery-wrap {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(3, 220px);
+      }
+      .gallery-item:first-child { grid-row: auto; grid-column: 1 / 3; }
+      footer { flex-direction: column; gap: 16px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════════════ HERO ═══════════════════ -->
+  <header class="hero" id="top">
+    <div class="hero__bg"></div>
+    <div class="hero__vignette"></div>
+
+    <div class="hero__tag"><span></span>Press Kit 2026</div>
+    <div class="hero__year">Buenos Aires, Argentina</div>
+
+    <div class="hero__content">
+      <h1 class="hero__name">GER<em>MA</em>NO</h1>
+      <p class="hero__subtitle">DJ &nbsp;/&nbsp; Producer &nbsp;·&nbsp; Techno &nbsp;·&nbsp; Est. 2005</p>
+    </div>
+
+    <div class="hero__scroll">Scroll</div>
+  </header>
+
+  <!-- ═══════════════════ BIO ═══════════════════ -->
+  <section id="bio" class="reveal">
+    <div class="section-label">01 — Biografía</div>
+
+    <div class="bio-grid">
+      <div class="bio-text">
+        <p>Germano Ocampo nació el 6 de septiembre de 1990 en Quilmes, sur de la provincia de Buenos Aires. Su carrera arrancó en 2005 con un debut en una disco de Fcio.&nbsp;Varela, y desde ese momento el camino no se detuvo.</p>
+        <p>Pasó por Mendoza, Córdoba, Santa Fe, Neuquén y Río Negro. Hizo 2 giras a Chile y 1 a Colombia. En Buenos Aires dejó huella en clubs como <strong>Under Club</strong>, <strong>Cocoliche</strong> y <strong>Crobar</strong>, compartiendo cabina con figuras de la escena nacional e internacional.</p>
+        <p>Fundó <strong>Vincent Techno Resistance</strong> en 2012 —hoy activo como sello discográfico— y actualmente es parte del colectivo <strong>Other Space</strong>, gestando el nuevo label <strong>VCT</strong> junto a curadores, artistas plásticos, productores e ingenieros.</p>
+        <p>Junto a <strong>Minau</strong>, es co-fundador y dueño de <strong>TCQ Club</strong>, uno de los espacios de música electrónica underground de Buenos Aires.</p>
+      </div>
+
+      <div class="bio-side">
+        <div class="stat-card">
+          <div class="stat-card__number">20<span>+</span></div>
+          <div class="stat-card__label">Años de carrera</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card__number">3</div>
+          <div class="stat-card__label">Países · AR / CL / CO</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card__number">2012</div>
+          <div class="stat-card__label">Fundación Vincent Records</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card__number">VCT</div>
+          <div class="stat-card__label">Nuevo label en desarrollo</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ GALLERY ═══════════════════ -->
+  <section id="fotos" style="padding-top:0" class="reveal">
+    <div class="section-label">02 — Fotografía</div>
+    <div class="gallery-wrap">
+      <div class="gallery-item">
+        <img src="fotos/IMG_1334.jpg" alt="Germano en la cabina - Strength" loading="lazy" />
+      </div>
+      <div class="gallery-item">
+        <img src="fotos/IMG_2876.jpeg" alt="Germano en Under Club - B&W" loading="lazy" />
+      </div>
+      <div class="gallery-item">
+        <img src="fotos/IMG_2572.jpeg" alt="Germano tocando en vivo" loading="lazy" />
+      </div>
+      <div class="gallery-item">
+        <img src="fotos/33fefee5-eb90-4ff3-b7fb-f420636680a6.jpeg" alt="Germano DJ set B&W" loading="lazy" />
+      </div>
+      <div class="gallery-item">
+        <img src="fotos/20bdeb82-1b7c-48c0-a35e-01a2f96322a0.jpeg" alt="Germano en vinilo" loading="lazy" />
+      </div>
+      <div class="gallery-item">
+        <img src="fotos/4ABAD4E7-8221-4836-B287-AFB11DFD79FA.jpeg" alt="Germano Portada" loading="lazy" />
+      </div>
+      <div class="gallery-item">
+        <img src="fotos/B9184AA3-8B32-4E40-B466-C9ABF411CDB2.jpeg" alt="Germano Live" loading="lazy" />
+      </div>
+      <div class="gallery-item">
+        <img src="fotos/cd967170-8181-462d-9bdf-b8c422d2433a.jpeg" alt="Germano Studio" loading="lazy" />
+      </div>
+      <div class="gallery-item">
+        <img src="fotos/f14f3fab-d526-4f8b-a916-965885a171e3.jpeg" alt="Germano Details" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ HEADLINERS ═══════════════════ -->
+  <div class="highlights reveal" id="highlights">
+    <div>
+      <div class="section-label" style="max-width:1280px; margin:0 auto; padding: 0 0 0 0">03 — Compartió Cabina Con</div>
+      <div class="names-cloud">
+        <span class="name-pill">Rødhåd</span>
+        <span class="name-pill">Pacou</span>
+        <span class="name-pill">Jon Hester</span>
+        <span class="name-pill">Invite</span>
+        <span class="name-pill">Fjaak</span>
+        <span class="name-pill">Bas Mooy</span>
+        <span class="name-pill">Alex.Do</span>
+        <span class="name-pill">Vril</span>
+        <span class="name-pill">Distant Echoes</span>
+        <span class="name-pill">Konstantin</span>
+        <span class="name-pill">Milton Bradley</span>
+        <span class="name-pill">Pfirter</span>
+        <span class="name-pill">Jose Pouj</span>
+        <span class="name-pill">Erphun</span>
+        <span class="name-pill">Luis Ruiz</span>
+        <span class="name-pill">Oswld</span>
+        <span class="name-pill">Mariano Dc</span>
+        <span class="name-pill">Mark Morris</span>
+        <span class="name-pill">Pandy</span>
+        <span class="name-pill">Xhei</span>
+        <span class="name-pill">Jam-on</span>
+        <span class="name-pill">FU-5</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════ VENUES ═══════════════════ -->
+  <section id="venues" class="reveal">
+    <div class="section-label">04 — Venues</div>
+    <div class="venues-list">
+      <div class="venue-item">
+        <span class="venue-name">Under Club</span>
+        <span class="venue-loc">Buenos Aires</span>
+      </div>
+      <div class="venue-item">
+        <span class="venue-name">Crobar</span>
+        <span class="venue-loc">Buenos Aires</span>
+      </div>
+      <div class="venue-item">
+        <span class="venue-name">Cocoliche</span>
+        <span class="venue-loc">Buenos Aires</span>
+      </div>
+      <div class="venue-item">
+        <span class="venue-name">Clubs en Mendoza</span>
+        <span class="venue-loc">Argentina</span>
+      </div>
+      <div class="venue-item">
+        <span class="venue-name">Córdoba / Santa Fe</span>
+        <span class="venue-loc">Argentina</span>
+      </div>
+      <div class="venue-item">
+        <span class="venue-name">Neuquén / Río Negro</span>
+        <span class="venue-loc">Argentina</span>
+      </div>
+      <div class="venue-item">
+        <span class="venue-name">Giras Chile</span>
+        <span class="venue-loc">2 fechas internacionales</span>
+      </div>
+      <div class="venue-item">
+        <span class="venue-name">Colombia</span>
+        <span class="venue-loc">1 fecha internacional</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ LABELS ═══════════════════ -->
+  <section id="discografia" class="reveal" style="padding-top:0">
+    <div class="section-label">05 — Discografía / Labels</div>
+    <div class="labels-wrap">
+      <div class="label-badge">Vincent Records</div>
+      <div class="label-badge">VCT</div>
+      <div class="label-badge">Concepto Hipnotico</div>
+      <div class="label-badge">Up at Down Records</div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ MEDIA ═══════════════════ -->
+  <section id="media" class="reveal" style="padding-top:0">
+    <div class="section-label">06 — Referencia de Audio/Video</div>
+    <div class="media-grid">
+      <a href="https://youtu.be/SecoX0-nt4I" target="_blank" rel="noopener" class="media-card">
+        <span class="media-card__type">Track</span>
+        <span class="media-card__title">Wavemod [VCT004]</span>
+        <span class="media-card__arrow">→</span>
+      </a>
+      <a href="https://youtu.be/P5bxrjbatvc" target="_blank" rel="noopener" class="media-card">
+        <span class="media-card__type">Track</span>
+        <span class="media-card__title">Manush [VCT004]</span>
+        <span class="media-card__arrow">→</span>
+      </a>
+      <a href="https://youtu.be/KUYyOpRPVSc" target="_blank" rel="noopener" class="media-card">
+        <span class="media-card__type">Track</span>
+        <span class="media-card__title">Sema [VCT004]</span>
+        <span class="media-card__arrow">→</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ RIDER ═══════════════════ -->
+  <section id="rider" class="reveal rider-section" style="padding-top: 80px">
+    <div class="section-label">07 — Rider Técnico</div>
+    <div class="rider-grid">
+      <div class="rider-item">
+        <h4>Setup</h4>
+        <p>2 CDJ-2000NXS2 o superior + DJM-900NXS2</p>
+      </div>
+      <div class="rider-item">
+        <h4>Alternativo</h4>
+        <p>2 Technics 1200 + mixer 4 canales</p>
+      </div>
+      <div class="rider-item">
+        <h4>Sonido</h4>
+        <p>Sistema de audio profesional (detalles en rider PDF adjunto)</p>
+      </div>
+      <div class="rider-item">
+        <h4>Rider Completo</h4>
+        <p><a href="rider tecnico/65543113_2997421810298000_1492420591838298112_n.jpg" target="_blank" style="color:var(--accent); text-decoration:none;">Ver imagen →</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ CONTACT ═══════════════════ -->
+  <div class="contact-section reveal" id="contacto">
+    <div class="contact-inner">
+      <h2 class="contact-title">Trabajemos<br><span>Juntos</span></h2>
+      <p class="contact-sub">Bookings · Fechas · Colaboraciones</p>
+      <div class="contact-actions">
+        <a href="mailto:Germanovct@gmail.com" class="btn btn-primary" id="contact-email-germano">✉ Booking Info</a>
+        <a href="https://soundcloud.com/germanodj" target="_blank" rel="noopener" class="btn btn-outline" id="soundcloud-germano">Cloud</a>
+        <a href="https://ra.co/dj/germano" target="_blank" rel="noopener" class="btn btn-outline" id="ra-germano">Resident Advisor</a>
+        <a href="https://vctlabel.bandcamp.com" target="_blank" rel="noopener" class="btn btn-outline" id="bandcamp-germano">Bandcamp</a>
+        <a href="https://instagram.com/germanodj" target="_blank" rel="noopener" class="btn btn-outline" id="ig-germano" style="gap:10px;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="ig-grad-btn" x1="0%" y1="100%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#f09433"/>
+                <stop offset="25%" stop-color="#e6683c"/>
+                <stop offset="50%" stop-color="#dc2743"/>
+                <stop offset="75%" stop-color="#cc2366"/>
+                <stop offset="100%" stop-color="#bc1888"/>
+              </linearGradient>
+            </defs>
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke="url(#ig-grad-btn)" stroke-width="2" fill="none"/>
+            <circle cx="12" cy="12" r="4" stroke="url(#ig-grad-btn)" stroke-width="2" fill="none"/>
+            <circle cx="17.5" cy="6.5" r="1.2" fill="url(#ig-grad-btn)"/>
+          </svg>
+          @germanodj
+        </a>
+        <a href="Biografia_.pdf" download class="btn btn-outline" id="download-bio">↓ Bio PDF</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════ FOOTER ═══════════════════ -->
+  <footer>
+    <div class="footer-logo">GERMANO</div>
+    <div class="footer-copy">TCQ Club owner &nbsp;·&nbsp; Buenos Aires · Argentina &nbsp;·&nbsp; Press Kit 2026</div>
+    <div class="social-links">
+      <a href="https://instagram.com/germanodj" target="_blank" rel="noopener" class="social-link" id="footer-ig-germano">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="ig-grad-f1" x1="0%" y1="100%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#f09433"/>
+              <stop offset="25%" stop-color="#e6683c"/>
+              <stop offset="50%" stop-color="#dc2743"/>
+              <stop offset="75%" stop-color="#cc2366"/>
+              <stop offset="100%" stop-color="#bc1888"/>
+            </linearGradient>
+          </defs>
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke="url(#ig-grad-f1)" stroke-width="2" fill="none"/>
+          <circle cx="12" cy="12" r="4" stroke="url(#ig-grad-f1)" stroke-width="2" fill="none"/>
+          <circle cx="17.5" cy="6.5" r="1.2" fill="url(#ig-grad-f1)"/>
+        </svg>
+        @germanodj
+      </a>
+      <span style="color:var(--grey-l);font-size:0.6rem;">·</span>
+      <a href="https://instagram.com/TCQCLUB" target="_blank" rel="noopener" class="social-link" id="footer-ig-tcq">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="ig-grad-f2" x1="0%" y1="100%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#f09433"/>
+              <stop offset="25%" stop-color="#e6683c"/>
+              <stop offset="50%" stop-color="#dc2743"/>
+              <stop offset="75%" stop-color="#cc2366"/>
+              <stop offset="100%" stop-color="#bc1888"/>
+            </linearGradient>
+          </defs>
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke="url(#ig-grad-f2)" stroke-width="2" fill="none"/>
+          <circle cx="12" cy="12" r="4" stroke="url(#ig-grad-f2)" stroke-width="2" fill="none"/>
+          <circle cx="17.5" cy="6.5" r="1.2" fill="url(#ig-grad-f2)"/>
+        </svg>
+        @TCQCLUB
+      </a>
+    </div>
+  </footer>
+
+  <script>
+    // Intersection Observer para fade-in
+    const reveals = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.08 });
+    reveals.forEach(r => io.observe(r));
+
+    // Highlights section lazy reveal
+    const highlights = document.querySelector('.highlights');
+    if (highlights) highlights.classList.add('reveal');
+    const highlightIO = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); highlightIO.unobserve(e.target); } });
+    }, { threshold: 0.05 });
+    document.querySelectorAll('.highlights').forEach(h => highlightIO.observe(h));
+  </script>
+</body>
+</html>
